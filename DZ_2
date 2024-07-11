@@ -1,0 +1,15 @@
+DELIMITER //
+
+CREATE PROCEDURE even_numbers (IN count_number INT, OUT result VARCHAR(255))
+BEGIN
+  DECLARE i INT DEFAULT 2;
+
+  SET result = '';
+
+  WHILE i < count_number DO
+    SET result = CONCAT(result, CAST(i AS CHAR), ' '); 
+    SET i = i + 2;
+  END WHILE;
+END //
+
+DELIMITER ;
